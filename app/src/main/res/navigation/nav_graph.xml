@@ -3,17 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_sign_in">
+    app:startDestination="@id/fragment_login">
 
     <fragment
-        android:id="@+id/fragment_sign_in"
-        android:name="com.example.effectivemobileproject.presentation.SignInFragment"
+        android:id="@+id/fragment_login"
+        android:name="com.example.effectivemobileproject.presentation.LoginFragment"
         android:label="Sign In"
-        tools:layout="@layout/fragment_sign_in">
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_signIn_to_main"
             app:destination="@id/fragment_main"
-            app:popUpTo="@id/fragment_sign_in"
+            app:popUpTo="@id/fragment_login"
             app:popUpToInclusive="true" />
     </fragment>
 
