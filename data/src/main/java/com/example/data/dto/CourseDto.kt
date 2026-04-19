@@ -1,6 +1,6 @@
-package com.example.effectivemobileproject.data.model
+package com.example.data.dto
 
-data class CourseModel(
+data class CourseDto(
     val id: Int,
     val title: String,
     val text: String,

@@ -23,4 +23,5 @@ androidx-navigation-fragment = { group = "androidx.navigation", name = "navigati
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+android-library = { id = "com.android.library", version.ref = "agp" }
 

@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.EffectiveMobileProject">
         <activity
-            android:name=".presentation.MainActivity"
+            android:name="com.example.effectivemobileproject.presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

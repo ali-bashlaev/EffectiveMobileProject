@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.NavHostFragment
-import com.example.effectivemobileproject.R
 import com.example.effectivemobileproject.databinding.ActivityMainBinding
 import androidx.navigation.ui.setupWithNavController
+import com.example.effectivemobileproject.R
 
 private var _binding: ActivityMainBinding? = null
 private val binding get() = _binding!!
