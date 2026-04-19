@@ -11,30 +11,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="140dp"
-        android:text="Вход"
+        android:text="@string/login_text_title"
         android:textColor="@android:color/white"
         android:textSize="28sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/lblEmail"
+        android:id="@+id/login_email_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="Email"
+        android:text="@string/login_email_text"
         android:textSize="16sp"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_text_title" />
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/login_email_input"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/bg_input_field"
-        android:hint="example@gmail.com"
+        android:hint="@string/login_input_email_hint"
         android:textSize="14sp"
         android:inputType="textEmailAddress"
         android:paddingHorizontal="16dp"
@@ -42,26 +42,26 @@
         android:textColorHint="@color/hint_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lblEmail" />
+        app:layout_constraintTop_toBottomOf="@id/login_email_text" />
 
     <TextView
-        android:id="@+id/lblPassword"
+        android:id="@+id/login_password_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Пароль"
+        android:text="@string/login_password_text"
         android:textSize="16sp"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etEmail" />
+        app:layout_constraintTop_toBottomOf="@id/login_email_input" />
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/login_password_input"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/bg_input_field"
-        android:hint="Введите пароль"
+        android:hint="@string/login_input_password_hint"
         android:inputType="textPassword"
         android:textSize="14sp"
         android:paddingHorizontal="16dp"
@@ -69,15 +69,15 @@
         android:textColorHint="@color/hint_grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/lblPassword" />
+        app:layout_constraintTop_toBottomOf="@id/login_password_text" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnLogin"
+        android:id="@+id/login_proceed_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:backgroundTint="@color/brand_green"
-        android:text="Вход"
+        android:text="@string/login_button_text"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:textAllCaps="false"
@@ -86,56 +86,56 @@
         app:cornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etPassword" />
+        app:layout_constraintTop_toBottomOf="@id/login_password_input" />
 
     <TextView
-        android:id="@+id/tvpassword"
+        android:id="@+id/login_no_account_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Нету аккаунта?"
+        android:text="@string/login_no_account_text"
         android:textSize="12sp"
         android:layout_marginStart="96dp"
         android:textColor="@android:color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+        app:layout_constraintTop_toBottomOf="@id/login_proceed_button" />
 
     <TextView
-        android:id="@+id/tvRegister"
+        android:id="@+id/login_registration_clickable_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="97dp"
-        android:text="Регистрация"
+        android:text="@string/login_registration_text"
         android:textSize="12sp"
         android:textColor="@color/brand_green"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnLogin" />
+        app:layout_constraintTop_toBottomOf="@id/login_proceed_button" />
 
     <TextView
-        android:id="@+id/tvForgot"
+        android:id="@+id/login_forgot_password_clickable_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Забыл пароль"
+        android:text="@string/logib_forgot_password_text"
         android:textSize="12sp"
         android:textColor="@color/brand_green"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvpassword" />
+        app:layout_constraintTop_toBottomOf="@id/login_no_account_text" />
 
     <View
-        android:id="@+id/divider"
+        android:id="@+id/login_divider"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:layout_marginTop="32dp"
         android:background="#33FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvForgot" />
+        app:layout_constraintTop_toBottomOf="@id/login_forgot_password_clickable_text" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnVK"
+        android:id="@+id/login_vk_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -146,13 +146,13 @@
         app:iconGravity="textStart"
         app:cornerRadius="30dp"
         app:iconPadding="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnOK"
+        app:layout_constraintEnd_toStartOf="@+id/button_ok_button"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider" />
+        app:layout_constraintTop_toBottomOf="@id/login_divider" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnOK"
+        android:id="@+id/button_ok_button"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="0dp"
         android:layout_height="43dp"
@@ -170,8 +170,8 @@
         app:iconPadding="0dp"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnVK"
-        app:layout_constraintTop_toTopOf="@+id/btnVK"
-        app:layout_constraintBottom_toBottomOf="@+id/btnVK" />
+        app:layout_constraintStart_toEndOf="@+id/login_vk_button"
+        app:layout_constraintTop_toTopOf="@+id/login_vk_button"
+        app:layout_constraintBottom_toBottomOf="@+id/login_vk_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
