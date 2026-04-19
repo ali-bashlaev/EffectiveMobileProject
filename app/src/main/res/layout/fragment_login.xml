@@ -146,13 +146,13 @@
         app:iconGravity="textStart"
         app:cornerRadius="30dp"
         app:iconPadding="0dp"
-        app:layout_constraintEnd_toStartOf="@+id/button_ok_button"
+        app:layout_constraintEnd_toStartOf="@+id/login_ok_button"
         app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_divider" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/button_ok_button"
+        android:id="@+id/login_ok_button"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="0dp"
         android:layout_height="43dp"

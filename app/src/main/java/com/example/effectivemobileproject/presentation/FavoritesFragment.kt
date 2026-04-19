@@ -14,7 +14,6 @@ class FavoritesFragment : Fragment(R.layout.fragment_favorites) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        PagerSnapHelper()
 
         _binding = FragmentFavoritesBinding.bind(view)
     }
