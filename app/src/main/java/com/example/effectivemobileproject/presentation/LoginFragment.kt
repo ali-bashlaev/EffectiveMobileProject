@@ -1,6 +1,7 @@
 package com.example.effectivemobileproject.presentation
 
 import android.os.Bundle
+import android.text.InputFilter
 import android.view.View
 import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
@@ -22,6 +23,20 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentLoginBinding.bind(view)
+
+        _binding = FragmentLoginBinding.bind(view)
+
+        val emailFilter = InputFilter { source, start, end, _, _, _ ->
+            for (i in start until end) {
+                val char = source[i]
+                if (!char.toString().matches(Regex("[a-zA-Z0-9.@_\\-+]"))) {
+                    return@InputFilter "" // Reject the character
+                }
+            }
+            null
+        }
+
+        binding.loginEmailInput.filters = arrayOf(emailFilter)
 
         binding.loginEmailInput.doAfterTextChanged { text ->
             val email = text.toString()
