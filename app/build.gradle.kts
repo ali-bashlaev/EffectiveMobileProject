@@ -62,4 +62,5 @@ dependencies {
     implementation(libs.koin.core)
 
     implementation(project(":domain"))
+    implementation(project(":data"))
 }
