@@ -2,11 +2,21 @@
 <resources>
     <color name="white">#FFFFFF</color>
     <color name="black">#FF000000</color>
-    <color name="bg_dark">#151515</color>
-    <color name="field_grey">#32333A</color>
-    <color name="brand_green">#12B956</color>
-    <color name="hint_grey">#8E8E93</color>
-    <color name="vk_blue">#0077FF</color>
-    <color name="ok_orange">#FF8000</color>
-    <color name="glass_background">#32333A4D</color>
+
+    <color name="dull_black">#151515</color>
+    <color name="gunmetal_grey">#32333A</color>
+    <color name="dark_spring_green">#12B956</color>
+    <color name="grey_shadow">#8E8E93</color>
+    <color name="brandeis_blue">#0077FF</color>
+    <color name="orange">#FF8000</color>
+    <color name="alpha_transparent">#32333A4D</color>
+
+    <color name="bg_dark">@color/dull_black</color>
+    <color name="field_grey">@color/gunmetal_grey</color>
+    <color name="brand_green">@color/dark_spring_green</color>
+    <color name="hint_grey">@color/grey_shadow</color>
+    <color name="vk_blue">@color/brandeis_blue</color>
+    <color name="ok_orange">@color/orange</color>
+    <color name="glass_background">@color/alpha_transparent</color>
+    <color name="main_text_colour">@color/white</color>
 </resources>
