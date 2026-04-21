@@ -53,14 +53,18 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
-    implementation("com.squareup.retrofit2:retrofit:3.0.0")
-    implementation("com.squareup.retrofit2:converter-gson:3.0.0")
-    implementation("androidx.navigation:navigation-ui-ktx:2.9.7")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.androidx.navigation.ui.ktx)
 
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)
     implementation(libs.koin.core)
 
     implementation(project(":domain"))
-    implementation(project(":data"))
+    implementation(project(":data"))//to access DataModule in MainApplication
+
+    implementation(libs.adapterdelegates4.kotlin.dsl)
+    implementation(libs.adapterdelegates4.kotlin.dsl.layoutcontainer)
+    implementation(libs.adapterdelegates4.kotlin.dsl.viewbinding)
 }

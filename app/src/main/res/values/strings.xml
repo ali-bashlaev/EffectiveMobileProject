@@ -9,4 +9,7 @@
     <string name="login_no_account_text">Нету аккаунта?</string>
     <string name="login_registration_text">Регистрация</string>
     <string name="logib_forgot_password_text">Забыл пароль</string>
+    <string name="main_search_input_hint">Search courses...</string>
+    <string name="main_filter_text">По дате добавления</string>
+    <string name="course_item_more_text">Подробнее</string>
 </resources>
