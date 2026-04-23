@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/fragment_main"
-        android:icon="@drawable/ic_main_unselected"
+        android:icon="@drawable/ic_main_bottom_menu_unselected"
         android:title="Главная" />
     <item
         android:id="@+id/fragment_favorites"
-        android:icon="@drawable/ic_favorites_unselected"
+        android:icon="@drawable/ic_favorites_bottom_menu_unselected"
         android:title="Избранное" />
     <item
         android:id="@+id/fragment_account"
-        android:icon="@drawable/ic_account"
+        android:icon="@drawable/ic_account_bottom_menu_unselected"
         android:title="Аккаунт" />
 </menu>
