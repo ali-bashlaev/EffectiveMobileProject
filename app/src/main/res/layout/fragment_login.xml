@@ -95,8 +95,9 @@
         android:layout_marginTop="16dp"
         android:text="@string/login_no_account_text"
         android:textSize="12sp"
-        android:layout_marginStart="96dp"
         android:textColor="@android:color/white"
+        app:layout_constraintEnd_toStartOf="@+id/login_registration_clickable_text"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/login_proceed_button" />
 
@@ -104,13 +105,13 @@
         android:id="@+id/login_registration_clickable_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="97dp"
+        android:layout_marginStart="4dp"
         android:text="@string/login_registration_text"
         android:textSize="12sp"
         android:textColor="@color/brand_green"
+        app:layout_constraintBaseline_toBaselineOf="@id/login_no_account_text"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/login_proceed_button" />
+        app:layout_constraintStart_toEndOf="@id/login_no_account_text" />
 
     <TextView
         android:id="@+id/login_forgot_password_clickable_text"
