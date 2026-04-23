@@ -4,6 +4,8 @@ import com.example.effectivemobileproject.R
 import com.example.domain.model.Course
 import com.example.effectivemobileproject.databinding.ItemCourseBinding
 import com.hannesdorfmann.adapterdelegates4.dsl.adapterDelegateViewBinding
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 
 fun courseAdapterDelegate(
@@ -19,9 +21,8 @@ fun courseAdapterDelegate(
             item.price.contains("₽")
             ) item.price else "${item.price} ₽"
         binding.courseRatingText.text = item.rate
-        binding.coursePublicationDate.text = item.startDate
-        
-        // Algorithm to add images based on title
+        binding.coursePublicationDate.text = formatDate(item.startDate)
+
         val imageRes = mapTitleToImage(item.title)
         binding.courseImage.setImageResource(imageRes)
 
@@ -35,6 +36,22 @@ fun courseAdapterDelegate(
         binding.courseButtonFavorite.setOnClickListener {
             onFavoriteClick(item)
         }
+    }
+}
+
+private fun formatDate(dateString: String): String {
+    return try {
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd", Locale.US)
+        val russianLocale = Locale("ru", "RU")
+        val outputFormat = SimpleDateFormat("d MMMM yyyy", russianLocale)
+        val date = inputFormat.parse(dateString)
+        if (date != null) {
+            outputFormat.format(date).replaceFirstChar { it.uppercase() }
+        } else {
+            dateString
+        }
+    } catch (e: Exception) {
+        dateString
     }
 }
 

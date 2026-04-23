@@ -25,11 +25,13 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private val viewModel: MainViewModel by viewModel()
     
-    private val adapter = ListDelegationAdapter(
-        courseAdapterDelegate { course ->
-            Toast.makeText(requireContext(), "Liked: ${course.title}", Toast.LENGTH_SHORT).show()
-        }
-    )
+    private val adapter by lazy {
+        ListDelegationAdapter(
+            courseAdapterDelegate { course ->
+                viewModel.toggleFavorite(course.id)
+            }
+        )
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,6 +39,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         setupRecyclerView()
         observeViewModel()
+
+        binding.mainFilterTextContainer.setOnClickListener {
+            viewModel.toggleSort()
+        }
     }
 
     private fun setupRecyclerView() {
