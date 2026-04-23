@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.EffectiveMobileProject" parent="Base.Theme.EffectiveMobileProject" />
+
+    <style name="AppIndicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/field_grey</item>
+        <item name="android:width">64dp</item>
+        <item name="android:height">32dp</item>
+    </style>
 </resources>
