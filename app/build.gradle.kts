@@ -4,11 +4,7 @@ plugins {
 
 android {
     namespace = "com.example.effectivemobileproject"
-    compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
-        }
-    }
+    compileSdk = 37
 
     defaultConfig {
         applicationId = "com.example.effectivemobileproject"
@@ -62,7 +58,7 @@ dependencies {
     implementation(libs.koin.core)
 
     implementation(project(":domain"))
-    implementation(project(":data"))//to access DataModule in MainApplication
+    implementation(project(":data"))
 
     implementation(libs.adapterdelegates4.kotlin.dsl)
     implementation(libs.adapterdelegates4.kotlin.dsl.layoutcontainer)

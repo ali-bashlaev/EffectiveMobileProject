@@ -8,6 +8,7 @@ import com.example.effectivemobileproject.presentation.state.MainState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class MainViewModel(
@@ -16,6 +17,14 @@ class MainViewModel(
 
     private val _state = MutableStateFlow<MainState>(MainState.Loading)
     val state: StateFlow<MainState> = _state.asStateFlow()
+
+    val favoriteCourses = _state.map { state ->
+        if (state is MainState.Success) {
+            state.courses.filter { it.hasLike }
+        } else {
+            emptyList()
+        }
+    }
 
     private var originalCourses: List<Course> = emptyList()
     private var isSorted: Boolean = false

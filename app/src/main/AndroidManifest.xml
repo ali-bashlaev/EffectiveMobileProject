@@ -15,7 +15,7 @@
         android:theme="@style/Theme.EffectiveMobileProject"
         android:name=".MainApplication">
         <activity
-            android:name="com.example.effectivemobileproject.presentation.MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

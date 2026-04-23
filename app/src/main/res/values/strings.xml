@@ -12,4 +12,5 @@
     <string name="main_search_input_hint">Search courses...</string>
     <string name="main_filter_text">По дате добавления</string>
     <string name="course_item_more_text">Подробнее</string>
+    <string name="favorites_title_text">Избранное</string>
 </resources>

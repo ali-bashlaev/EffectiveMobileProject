@@ -12,10 +12,16 @@
     app:cardElevation="0dp"
     app:strokeWidth="0dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
+        android:id="@+id/course_item_blur_target"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/course_item_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/course_image_container"
@@ -28,64 +34,87 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
+                android:contentDescription="@null"
                 tools:src="@drawable/img_course_placeholder" />
 
-            <ImageButton
-                android:id="@+id/course_button_favorite"
+            <FrameLayout
+                android:id="@+id/course_favorite_blur_container"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="@drawable/bg_circle_translucent"
-                android:src="@drawable/ic_favorites_bottom_menu_unselected"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <LinearLayout
-                android:id="@+id/course_rating_badge"
+                <ImageButton
+                    android:id="@+id/course_button_favorite"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_favorites_bottom_menu_unselected" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/course_rating_blur_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/bg_badge_translucent"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingHorizontal="6dp"
-                android:paddingVertical="4dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
-                <ImageView
-                    android:id="@+id/course_rating_icon"
-                    android:layout_width="14dp"
-                    android:layout_height="14dp"
-                    android:src="@drawable/ic_star"
-                    app:tint="#22C55E" />
-
-                <TextView
-                    android:id="@+id/course_rating_text"
+                <LinearLayout
+                    android:id="@+id/course_rating_badge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="4dp"
-                    tools:text="4.9"
-                    android:textColor="@color/white"
-                    android:textSize="14sp" />
-            </LinearLayout>
+                    android:background="@android:color/transparent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="6dp"
+                    android:paddingVertical="4dp">
 
-            <TextView
-                android:id="@+id/course_publication_date"
+                    <ImageView
+                        android:id="@+id/course_rating_icon"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:src="@drawable/ic_star"
+                        android:contentDescription="@null"
+                        app:tint="#22C55E" />
+
+                    <TextView
+                        android:id="@+id/course_rating_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="4dp"
+                        tools:text="4.9"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/course_date_blur_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:background="@drawable/bg_badge_translucent"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="4dp"
-                tools:text="22 Мая 2024"
-                android:textSize="14sp"
-                android:textColor="@color/main_text_colour"
-                app:layout_constraintBottom_toBottomOf="@+id/course_rating_badge"
-                app:layout_constraintStart_toEndOf="@+id/course_rating_badge"
-                app:layout_constraintTop_toTopOf="@+id/course_rating_badge" />
+                app:layout_constraintBottom_toBottomOf="@+id/course_rating_blur_container"
+                app:layout_constraintStart_toEndOf="@+id/course_rating_blur_container"
+                app:layout_constraintTop_toTopOf="@+id/course_rating_blur_container">
+
+                <TextView
+                    android:id="@+id/course_publication_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="4dp"
+                    tools:text="22 Мая 2024"
+                    android:textSize="14sp"
+                    android:textColor="@color/main_text_colour" />
+            </FrameLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -146,5 +175,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/course_price_text" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
 </com.google.android.material.card.MaterialCardView>

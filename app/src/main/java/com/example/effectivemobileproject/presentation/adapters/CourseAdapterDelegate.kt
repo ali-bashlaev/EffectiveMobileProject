@@ -14,6 +14,11 @@ fun courseAdapterDelegate(
     { layoutInflater, parent -> ItemCourseBinding.inflate(layoutInflater, parent,
         false) }
 ) {
+    
+    binding.courseFavoriteBlurContainer.clipToOutline = true
+    binding.courseRatingBlurContainer.clipToOutline = true
+    binding.courseDateBlurContainer.clipToOutline = true
+
     bind {
         binding.courseTitleText.text = item.title
         binding.courseDescriptionText.text = item.text
@@ -42,7 +47,7 @@ fun courseAdapterDelegate(
 private fun formatDate(dateString: String): String {
     return try {
         val inputFormat = SimpleDateFormat("yyyy-MM-dd", Locale.US)
-        val russianLocale = Locale("ru", "RU")
+        val russianLocale = Locale.forLanguageTag("ru")
         val outputFormat = SimpleDateFormat("d MMMM yyyy", russianLocale)
         val date = inputFormat.parse(dateString)
         if (date != null) {
@@ -50,7 +55,7 @@ private fun formatDate(dateString: String): String {
         } else {
             dateString
         }
-    } catch (e: Exception) {
+    } catch (_: Exception) {
         dateString
     }
 }

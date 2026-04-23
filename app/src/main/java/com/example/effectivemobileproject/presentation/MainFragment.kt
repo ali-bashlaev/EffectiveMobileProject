@@ -16,14 +16,14 @@ import com.example.effectivemobileproject.presentation.state.MainState
 import com.example.effectivemobileproject.presentation.viewmodels.MainViewModel
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 
 class MainFragment : Fragment(R.layout.fragment_main) {
 
     private var _binding: FragmentMainBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: MainViewModel by viewModel()
+    private val viewModel: MainViewModel by activityViewModel()
     
     private val adapter by lazy {
         ListDelegationAdapter(
