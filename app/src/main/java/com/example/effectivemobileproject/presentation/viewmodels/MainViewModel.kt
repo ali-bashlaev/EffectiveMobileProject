@@ -4,27 +4,31 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.model.Course
 import com.example.domain.usecases.GetCoursesUseCase
+import com.example.effectivemobileproject.presentation.state.MainState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class MainViewModel(
     private val getCoursesUseCase: GetCoursesUseCase
 ) : ViewModel() {
 
-    private val _courses = MutableStateFlow<List<Course>>(emptyList())
-    val courses: StateFlow<List<Course>> = _courses
+    private val _state = MutableStateFlow<MainState>(MainState.Loading)
+    val state: StateFlow<MainState> = _state.asStateFlow()
 
     init {
         loadData()
     }
 
-    private fun loadData() {
+    fun loadData() {
         viewModelScope.launch {
+            _state.value = MainState.Loading
             try {
-                _courses.value = getCoursesUseCase()
+                val courses = getCoursesUseCase()
+                _state.value = MainState.Success(courses)
             } catch (e: Exception) {
-                // Log error or handle UI state
+                _state.value = MainState.Error(e.message ?: "Unknown error occurred")
             }
         }
     }

@@ -9,5 +9,5 @@
         android:color="#FF4B4B" /> <!-- Red color -->
 
     <!-- Match the corner radius of your other inputs -->
-    <corners android:radius="8dp" />
+    <corners android:radius="28dp" />
 </shape>
